@@ -3,7 +3,6 @@ let spawn = localConfiguration.spawn;
 
 let roleBuilder = {
     run: function(creep) {
-        //console.log('HI I AM A BUILDER IN A TICK FUCNTION');
         let capacity = creep.carryCapacity;
         let energy = creep.carry.energy;
         if (!creep.memory.building && energy === capacity) {

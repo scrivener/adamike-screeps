@@ -23,12 +23,12 @@ let roleUpgrader = {
         }
             
         if (!creep.memory.upgrading) {
-            let sourceNumber = creep.name.split('_')[1] % 2;
+            let sources = creep.room.find(FIND_SOURCES);
+            let sourceNumber = creep.name.split('_')[1] % sources.length;
             if (isNaN(sourceNumber)) {
                 sourceNumber = 0;
             }
-            let source = creep.room.find(FIND_SOURCES)[sourceNumber];
-            //creep.say(`${energy}/${capacity}`);
+            let source = sources[sourceNumber];
             if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(source);
             }

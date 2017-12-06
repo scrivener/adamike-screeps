@@ -12,17 +12,16 @@ let spawn = localConfiguration.spawn;
 
 let roleHarvester = {
     run: function(creep) {
-        //console.log('HI I AM A HARVESTER IN A TICK FUCNTION');
-        // console.log(spawn);
-        
         let capacity = creep.carryCapacity;
         let energy = creep.carry.energy;
         if (energy < capacity) {
-            let sourceNumber = creep.name.split('_')[1] % 2;
+            let sources = creep.room.find(FIND_SOURCES);
+            let sourceNumber = creep.name.split('_')[1] % sources.length;
             if (isNaN(sourceNumber)) {
                 sourceNumber = 0;
             }
-            let source = creep.room.find(FIND_SOURCES)[sourceNumber];
+            let source = sources[sourceNumber];
+            console.log(creep.name, sourceNumber);
             //creep.say(`${energy}/${capacity}`);
             if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(source);
