@@ -1,3 +1,5 @@
+let localConfiguration = require('localConfiguration');
+let spawn = localConfiguration.spawn;
 
 let roleBuilder = {
     run: function(creep) {
@@ -10,9 +12,9 @@ let roleBuilder = {
             creep.memory.building = false;
         }
         if(!creep.memory.building){
-            let errorCode = creep.withdraw(Game.spawns['Spawn_W8N3_001'], RESOURCE_ENERGY);
+            let errorCode = creep.withdraw(Game.spawns[spawn], RESOURCE_ENERGY);
             if (errorCode == ERR_NOT_IN_RANGE) {
-                creep.moveTo(Game.spawns['Spawn_W8N3_001']);
+                creep.moveTo(Game.spawns[spawn]);
             }
         }
         else {

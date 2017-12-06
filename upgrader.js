@@ -6,6 +6,8 @@
  * var mod = require('upgrader');
  * mod.thing == 'a thing'; // true
  */
+let localConfiguration = require('localConfiguration');
+let spawn = localConfiguration.spawn;
 
 let roleUpgrader = {
     run: function(creep) {

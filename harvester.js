@@ -7,10 +7,13 @@
  * mod.thing == 'a thing'; // true
  */
 
+let localConfiguration = require('localConfiguration');
+let spawn = localConfiguration.spawn;
 
 let roleHarvester = {
     run: function(creep) {
         //console.log('HI I AM A HARVESTER IN A TICK FUCNTION');
+        // console.log(spawn);
         
         let capacity = creep.carryCapacity;
         let energy = creep.carry.energy;
@@ -25,10 +28,10 @@ let roleHarvester = {
                 creep.moveTo(source);
             }
         } else {
-            if (Game.spawns['Spawn_W8N3_001'].energy < Game.spawns['Spawn_W8N3_001'].energyCapacity) {
-                let errorCode = creep.transfer(Game.spawns['Spawn_W8N3_001'], RESOURCE_ENERGY);
+            if (Game.spawns[spawn].energy < Game.spawns[spawn].energyCapacity) {
+                let errorCode = creep.transfer(Game.spawns[spawn], RESOURCE_ENERGY);
                 if (errorCode == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(Game.spawns['Spawn_W8N3_001']);
+                    creep.moveTo(Game.spawns[spawn]);
                 }
             } else {
                 if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
