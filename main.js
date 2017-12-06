@@ -22,27 +22,23 @@ module.exports.loop = function() {
     }
     
     if (harvesters.length < MAX_HARVESTERS) {
-        console.log(harvesters.length, 'harvesters');
+        // console.log(harvesters.length, 'harvesters');
         let i;
         for (i=1; i<MAX_HARVESTERS+1; i++) {
             if (Game.spawns['Spawn_W8N3_001'].createCreep([WORK,CARRY,MOVE], `HARVESTER_${i}`, {'type': 'HARVESTER'}) != ERR_NAME_EXISTS) {
                 
-                console.log('I break', i);
+                // console.log('I break', i);
                 break;
             }
         }
-    }
-    
-    if (upgraders.length < MAX_UPGRADERS) {
+    } else if (upgraders.length < MAX_UPGRADERS) {
         let i;
         for (i=1; i<MAX_UPGRADERS+1; i++) {
             if (Game.spawns['Spawn_W8N3_001'].createCreep([WORK,CARRY,MOVE], `UPGRADER_${i}`, {'type': 'UPGRADER', 'upgrading': false}) != ERR_NAME_EXISTS) {
                 break;
             }
         }
-    }
-    
-    if (builders.length < MAX_BUILDERS) {
+    } else if (builders.length < MAX_BUILDERS) {
         let i;
         for (i=1; i<MAX_BUILDERS+1; i++) {
             if (Game.spawns['Spawn_W8N3_001'].createCreep([WORK,CARRY,MOVE], `BUILDER_${i}`, {'type': 'BUILDER', 'building': false}) != ERR_NAME_EXISTS) {
