@@ -2,6 +2,9 @@ let roleHarvester = require('harvester');
 let roleUpgrader = require('upgrader');
 let roleBuilder = require('builder');
 
+let localConfiguration = require('localConfiguration');
+let spawn = localConfiguration.spawn;
+
 const MAX_HARVESTERS = 4;
 const MAX_UPGRADERS = 7;
 const MAX_BUILDERS = 2;
