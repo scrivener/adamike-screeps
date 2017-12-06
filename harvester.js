@@ -21,8 +21,6 @@ let roleHarvester = {
                 sourceNumber = 0;
             }
             let source = sources[sourceNumber];
-            console.log(creep.name, sourceNumber);
-            //creep.say(`${energy}/${capacity}`);
             if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(source);
             }
