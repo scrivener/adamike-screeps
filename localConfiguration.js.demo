@@ -3,7 +3,7 @@ let localConfiguration = {
   MAX_HARVESTERS: 4,
   MAX_UPGRADERS: 7,
   MAX_BUILDERS: 2,
-
+  energyReserve: 200,
 }
 
 module.exports = localConfiguration;
