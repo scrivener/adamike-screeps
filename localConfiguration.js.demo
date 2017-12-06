@@ -1,5 +1,8 @@
 let localConfiguration = {
-  spawn: 'Spawn_W8N3_001'
+  spawn: 'Spawn_W8N3_001',
+  MAX_HARVESTERS: 4,
+  MAX_UPGRADERS: 7,
+  MAX_BUILDERS: 2,
 
 }
 
